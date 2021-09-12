@@ -12,8 +12,8 @@ class ClassificationEvaluator(Evaluator):
         for i, batch in enumerate(dataloader):
             Xs = batch['image']
             gts = batch['label']
-            Xs.to(device)
-            gts.to(device)
+            Xs = Xs.to(device)
+            gts = gts.to(device)
             all += gts.shape[0]
             # print(Xs)
             # print(gts)
